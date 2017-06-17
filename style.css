@@ -18,17 +18,14 @@ img {
 }
 
 h1,h2,h3,h4 {
-    background-color: #fbf1c7;
     color: #7c6f64}
 
 button {
     background-size: auto;
-    background-color: #fbf1c7;
     color: #b16286}
 
 a {
     color: #076678;
-    background-color: #fbf1c7}
 a:hover,a:focus,a:visited { color: #076678}
 a:hover { text-decoration: underline}
 
