@@ -28,6 +28,37 @@
 			<p>So for quite some time, I was going through window managers quite frequently. I'd trial one, enjoy many points of it, and eventually find another that suited for a different reason.</p>
 			<p>I really liked <a href="https://dwm.suckless.org/">dwm</a> for a few reasons. It had a wonderfully responsive stacking layout, and the tagging feature.</p>
 			<p>I also really liked <a href="https://i3wm.org/">i3</a> for the menu system, and per-window hooks.</p>
+<blockquote><p>			<p>these may not be unique, nor originated by these wm's; but this is where I encountered them first</p></p></blockquote>
+			<p>Along came the <a href="Similar in design to xdotool, but not monolithic">wmutils</a></p>
+			<p>That was the last straw, I'd just make my own wm. With blackjack.</p>
+		</section>
+
+		<section>
+			<header>
+				<h2><a name="Tags Are Pretty Nice">Tags Are Pretty Nice</a></h2>
+			</header>
+			<p>Tags, or groups as some call them are a feature that has been around for a while. At any given point in time, you will have a few windows open.</p>
+			<p>Normally, you'll have n workspaces, and each one will be dedicated to some task. Workspace 1 is your browser, workspace 2 your chats, workspace 3 your emails - or at least something similar.</p>
+			<p>With tags/groups, each thing is assigned a tag. The mechanic that is involved is, whether every window in a tag is visible or not. So, attributing the same numbers back where tag 1 is browser, tag 2 is chats, and tag 3 is emails, you can show tag 1 and 3, having both your browser and your emails on your workspace at once. Toggling off tag 3, you're left with just your browser. Toggle tag 2, and you have a browser and your chats on your workspace.</p>
+			<p>It's dynamic, versus a static grouping. It is worth noting that there are sticky windows available in things like i3, which leave a window visible on all workspaces.</p>
+		</section>
+
+		<section>
+			<header>
+				<h2><a name="Cool, Tags Sound Neat. How Get?">Cool, Tags Sound Neat. How Get?</a></h2>
+			</header>
+			<p>I had decided to go with wmutils, but they had a cludgy, file-backed grouping mechanism. It worked mostly ok, but I was never very satisfied. There was lots of state wonkiness, and I'd end up with false information about which tags were active, which windows were in which tag, etc.</p>
+			<p>I was mulling over many ideas, from using a long running process to track variables, to using the same file-backed grouping as the others. Around the same time, I was working on <a href="https://github.com/sdhand/x11fs">x11fs</a> to attempt to implement a clipboard - and was working with the X11 ATOM system. Putting two, and two, and two together, I was able to realize that I could store the tag data as a user atom.</p>
+			<p>Thus was born <a href="https://github.com/halfwit/watom">watom</a>, which were knocked off actually fairly fast. About a day each.</p>
+			<p><pre><code></code></pre></p>
+			<p># grp will set an arbitrarily named group to the window designated by wid</p>
+			<p>grp <name> <wid></p>
+			<p># lsgrp will list all wid's currently in the named group</p>
+			<p>lsgrp <name></p>
+			<p><pre><code></code></pre></p>
+			<p>Leveraging <a href="toggle tag 3 will list tag 3, running it through the wmutils program mapw -t">sxhkd</a></p>
+			<p>And that was really enough to do a full tagging system.</p>
+		</section>
 	</main>
 	<footer>
 		<section>
