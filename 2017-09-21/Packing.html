@@ -29,8 +29,8 @@
 			<p>I really liked <a href="https://dwm.suckless.org/">dwm</a> for a few reasons. It had a wonderfully responsive stacking layout, and the tagging feature.</p>
 			<p>I also really liked <a href="https://i3wm.org/">i3</a> for the menu system, and per-window hooks.</p>
 <blockquote><p>			<p>these may not be unique, nor originated by these wm's; but this is where I encountered them first</p></p></blockquote>
-			<p>Along came the <a href="Similar in design to xdotool, but not monolithic">wmutils</a></p>
-			<p>That was the last straw, I'd just make my own wm. With blackjack.</p>
+			<p>Along came the <a href="https://github.com/wmutils">wmutils</a> project, which is basically a set of binaries for interacting with windows and the X server from the command line.</p>
+			<p>It is similar in design to xdotool - but not monolithic - which I had come to appreciate in userland tools for ease of manpage perusal. That was the last straw, I'd just make my own wm. With blackjack.</p>
 		</section>
 
 		<section>
@@ -58,7 +58,8 @@
 			<p># lsgrp will list all wid's currently in the named group</p>
 			<p>lsgrp <name></p>
 			<p><pre><code></code></pre></p>
-			<p>Leveraging <a href="toggle tag 3 will list tag 3, running it through the wmutils program mapw -t">sxhkd</a></p>
+			<p>Leveraging <a href="https://github.com/baskerville/sxhkd">sxhkd</a> to intercept keystrokess, I can set groups for windows, and list all windows in a group.</p>
+			<p>So, to toggle a group for example, I simply list all windows, toggling the mapped state of all those windows. (toggle tag 3 will list tag 3, running it through the wmutils program mapw -t)</p>
 			<p>And that was really enough to do a full tagging system.</p>
 		</section>
 	</main>
