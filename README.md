@@ -7,3 +7,4 @@ A home for various writings related to what I've been working on or learning.
 * [2017-05-08 - What We've Got Here Is... Failure To Communicate](https://halfwit.github.io/2017-05-08/Communicate.html)
 * [2017-05-18 - Keyboard Build Log](https://halfwit.github.io/2017-05-18/Log.html)
 * [2017-07-30 - Desk Build Log](https://halfwit.github.io/2017-07-30/Log.html)
+* [2017-09-21 - Bin Packing](https://halfwit.github.io/2017-09-21/Packing.html)
