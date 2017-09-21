@@ -49,7 +49,9 @@
 			</header>
 			<p>I had decided to go with wmutils, but they had a cludgy, file-backed grouping mechanism. It worked mostly ok, but I was never very satisfied. There was lots of state wonkiness, and I'd end up with false information about which tags were active, which windows were in which tag, etc.</p>
 			<p>I was mulling over many ideas, from using a long running process to track variables, to using the same file-backed grouping as the others. Around the same time, I was working on <a href="https://github.com/sdhand/x11fs">x11fs</a> to attempt to implement a clipboard - and was working with the X11 ATOM system. Putting two, and two, and two together, I was able to realize that I could store the tag data as a user atom.</p>
-			<p>Thus was born <a href="https://github.com/halfwit/watom">watom</a>, which were knocked off actually fairly fast. About a day each.</p>
+			<p>Thus were born the following:</p>
+			<p><a href="https://github.com/halfwit/wmgroup">wmgroup</a></p>
+			<p><a href="https://github.com/halfwit/watom">watom</a>, which were knocked off actually fairly fast. About a day each.</p>
 			<p><pre><code></code></pre></p>
 			<p># grp will set an arbitrarily named group to the window designated by wid</p>
 			<p>grp <name> <wid></p>
