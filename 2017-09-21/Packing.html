@@ -13,6 +13,10 @@
 				<li><a href="#It Has Been One Year Since My Last WM Issue">It Has Been One Year Since My Last WM Issue</a></li>
 				<li><a href="#Tags Are Pretty Nice">Tags Are Pretty Nice</a></li>
 				<li><a href="#Cool, Tags Sound Neat. How Get?">Cool, Tags Sound Neat. How Get?</a></li>
+				<li><a href="#So Why Not Tiling">So Why Not Tiling</a></li>
+				<li><a href="#Ok Then, That Was A Lot Of Reading. Binpack!">Ok Then, That Was A Lot Of Reading. Binpack!</a></li>
+				<li><a href="#Wmutils And Hwwm">Wmutils And Hwwm</a></li>
+				<li><a href="#In Closing, Your Honour">In Closing, Your Honour</a></li>
 			</ul>
 		<nav>
 				<section>
@@ -59,6 +63,66 @@ lsgrp &ltname&gt
 lsgrp 1 | xargs mapw -t
 </pre></code>
 			<p>And that was really enough to do a full tagging system.</p>
+		</section>
+
+		<section>
+			<header>
+				<h2><a name="So Why Not Tiling">So Why Not Tiling</a></h2>
+			</header>
+			<p>Towards the end of my tenure of using a tiling window manager, I found myself doing something kinda pointless. I was opening up empty terminals, to pad out my other terminals to a particular size. Now, this seems insane, but I was mildly obsessing over <a href="https://baymard.com/blog/line-length-readability">line lengths</a>.</p>
+			<p>Eventually, I was just sick of it all. I moved over to having all windows float, hand laying them out to what I soon recognized to be a predictable arrangement, regardless of which tags I had in. Some weeks of research ensued, and I eventually stumbled across the binpacking algorithms, specifically the <a href="https://en.wikipedia.org/wiki/Bin_packing_problem">2D variant</a>. The 2D one wasn't a perfect match, as it depends on rectangles which have a set size, and I wanted my windows to grow and fit the space as much as possible, when possible.</p>
+			<p>This would allow me, I figured, to arrange all of my windows to fit my container - which in this case is my screen - and do so with set sizes for each window. Terminals, ~68 chars wide. Browser? Normally about 80 chars, with the ability to grow/shrink on command, same with my editor. Finally, I wanted everything to center on my screen, because the eyes tend to be drawn to the center in my experience, and we may as well leverage that.</p>
+			<p>You're probably shouting suggestions at your screen, asking why I'm not using $thing. Well, I didn't know about $thing, where were you when I started this? Damnit. Where were you. Regardless, I wasn't able to find something that fit perfectly with all of my constraints, and this was born <a href="https://github.com/halfwit/binpack">binpack</a>.</p>
+		</section>
+
+		<section>
+			<header>
+				<h2><a name="Ok Then, That Was A Lot Of Reading. Binpack!">Ok Then, That Was A Lot Of Reading. Binpack!</a></h2>
+			</header>
+			<p>tl;dr</p>
+<code><pre>read windows from standard in minx/miny/maxx/maxy/window id
+sort windows, biggest to smallest
+place a window on screen, top left
+bisect remaining space into two rectangles
+sort rectangles
+put next biggest window in smallest rectangle
+bisect remaining space into rectangles
+remove overlapping rectangles
+sort rectangles
+...
+if fails, reduce size of windows
+
+increase size of windows, repeat above algorithm
+if increase fails, store last good values
+center all windows on screen using last good values
+write xywh + window id to stdout for all windows
+</pre></code>
+			<p>Now, it's slightly more complicated than that, and there's also a few shortcuts in the code for instances where all windows fit at a maximum size. The whole thing was about a week of work, and it is <a href="https://ptpb.pw/zmbA.mkv">currently imperfect</a>, but it's good enough for a scrappy implementation. In the coming months, I plan on making a switch to accept number of monitors, and modify the logic when that occurs:</p>
+			<p>-s 2: split all windows evenly between two groups, and perform a bin pack on each group. The resulting blobs will be centered evenly on two monitors</p>
+			<p>-s 3: run a normal bin-packing on our windows, any excess screen will be sorted into two groups, on which a bin pack will be ran. The resulting blobs will be centered evenly on the outer two monitors, with the initial blob in the center. There is a short-cut here in that our worst case will be running a resize.</p>
+			<p>Now, armed with a fancy new algorithm, I needed a way to feed in the window sizes that I wanted in a consistant, and measured way.</p>
+		</section>
+
+		<section>
+			<header>
+				<h2><a name="Wmutils And Hwwm">Wmutils And Hwwm</a></h2>
+			</header>
+			<p>By this point in time, I was already using wmutils exclusively. Simple hotkey movement around, coupled with simple hotkey resize was enough to make due for my window management needs, while I worked through the remaining struggles associated with implementing what I wanted.</p>
+			<p>The main idea was, list all windows, pipe them into a utility to pull the name of the window out, and use that name and awk to read out a preset from a file, which would be properly formatted for input to binpack, which would crunch the data and output the raw geometry for each window. Then using wmv all of our windows would be exactly where we wanted them to be. The first working attempt at this looked pretty darn good, and I even managed to grab a <a href="https://www.youtube.com/watch?v=MSIjqTgtj2c">video</a>.</p>
+			<p>A rather unforseen stumbling point was how to handle referring to open windows in X11 by their name. There's two notable atoms that carry nomenclature information in X11, WM_CLASS and WM_NAME. The latter was what I targetted initially, only much later referring to the former for what I was doing. There exists a remarkable inconsistency of what to attribute for WM_NAME, and I found myself patching various software - Surf's title string was an easy fix, <a href="https://github.com/halfwit/dotfiles/blob/master/zsh/.zshrc#L117">st</a>'s was a bit more bothersome - and wrapping most programs that allowed it with a flag for the title, or convoluted xprop schemes that would fire some milliseconds after creation of a new window- it was hacky.</p>
+			<p>Eventually, I had the notion to add gaps, which was knocked off in about 30 minutes, resulting in what you see <a href="https://www.youtube.com/watch?v=cHCjnZ-6NZ8">here</a>. One point to note in the video are that it is runtime-modifiable, all but the very central loop, which grabs all window events, and writes them into certain things like an auto-tagger.</p>
+			<p>Eventually, the level of hackiness using WM_NAME came to a head, and I decided to rewrite, using WM_CLASS instead.</p>
+			<p>- <a href="https://github.com/halfwit/hwwm/blob/master/wshuf">wshuf</a> is the algorithm that feeds binpack, and is called to shuffle the windows after open/close/move events</p>
+			<p>- <a href="https://github.com/halfwit/hwwm/blob/master/hwwm">hwwm</a> is the main loop of the program, and the only piece of the code that isn't runtime modifiable.</p>
+			<p>- <a href="https://github.com/halfwit/dotfiles/blob/master/x11/window">window</a>,<a href="https://github.com/halfwit/dotfiles/blob/master/x11/size">size</a>, and <a href="https://github.com/halfwit/dotfiles/blob/master/x11/tags">tags</a> constitute my personal settings, and contain some insight on to how certain features are achieved.</p>
+		</section>
+
+		<section>
+			<header>
+				<h2><a name="In Closing, Your Honour">In Closing, Your Honour</a></h2>
+			</header>
+			<p>I'd like to thank you for taking the time to read this. The entire endeavour was a lot of work, and thusfar has only served to scratch a barely annoying itch that was having to do anything to manage windows. (Notable aside, I still manage the width of my browser and others, starting from their defaults which I've set to the "most likely") This begs the question, was it worth it? Yes, it was a great learning experience, and I've been nothing but happy with my window management since the switch to WM_CLASS. All in all, this has improved my productivity, and drastically improved my "flow state" fluidity, while all but obliterating the overhead in my window management from the tiling days. I honestly can't wait to get this up and running on the multihead setup, and I hope some of you out there are inspired.</p>
+			<p>If you would like to try this window manager, but run in to snags, or have any questions, I can be found on Freenode, on the #hwwm channel, and others. Additionally, you can always email me at the address listed below.</p>
 		</section>
 	</main>
 	<footer>
