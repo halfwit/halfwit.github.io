@@ -1,12 +1,14 @@
 /* Base */
 * { 
-	font-family: "Source Code Pro", monospace;
-    font: 8.7pt monospace; }
-h1 { font: 18pt monospace; }
-h2 { font: 16pt monospace; }
-h3 { font: 14pt monospace; }
-h4 { font: 12pt monospace; }
-h5 { font: 10pt monospace; }
+	font-family: "Source Code Pro";
+    font: 8.7pt; 
+}
+
+h1 { font: 18pt; }
+h2 { font: 16pt; }
+h3 { font: 14pt; }
+h4 { font: 12pt; }
+h5 { font: 10pt; }
 
 *:not(a),body,td,tr,p { color: #3c3836; }
 
@@ -15,18 +17,22 @@ img {
 	max-height: 99%;
 }
 
-h1,h2,h3,h4 { color: #7c6f64 }
+h1,h2,h3,h4 { color: #7c6f64; }
 
-code { background-color: #d5c4a1; }
 
 button {
     background-size: auto;
-    color: #b16286
+    color: #b16286;
 }
 
 a { color: #076678; }
-a:hover,a:focus,a:visited { color: #076678 }
-a:hover { text-decoration: underline}
+a:hover,a:focus,a:visited { color: #076678; }
+a:hover { text-decoration: underline; }
 
-b   { font: bold monospace; }
-em  { font: bold monospace; }
+b   { font: bold; }
+em  { font: bold; }
+
+code,pre { 
+	background-color: #d5c4a1;
+	font: monospace;
+}
