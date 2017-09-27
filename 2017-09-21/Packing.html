@@ -48,16 +48,14 @@
 			<p>- <a href="https://github.com/halfwit/wmgroup">wmgroup</a></p>
 			<p>- <a href="https://github.com/halfwit/watom">watom</a></p>
 			<p>These were knocked off actually fairly fast, about a day for each, and worked as follows:</p>
-<code><pre>
-# grp will set an arbitrarily named group to the window designated by wid
-grp <name> <wid>
+<code><pre># grp will set an arbitrarily named group to the window designated by wid
+grp &ltname&gt &ltwid&gt
 
 # lsgrp will list all wid's currently in the named group
-lsgrp <name>
+lsgrp &ltname&gt
 </pre></code>
 			<p>Leveraging <a href="https://github.com/baskerville/sxhkd">sxhkd</a> to intercept keystrokes, I can set groups for windows, and list all windows in a group.</p>
-<code><pre>
-# List all windows in a group, and use wmutils to toggle their visible state
+<code><pre># List all windows in a group, and use wmutils to toggle their visible state
 lsgrp 1 | xargs mapw -t
 </pre></code>
 			<p>And that was really enough to do a full tagging system.</p>
