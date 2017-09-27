@@ -8,25 +8,24 @@ h3 { font: 14pt monospace; }
 h4 { font: 12pt monospace; }
 h5 { font: 10pt monospace; }
 
-*:not(a),body,td,tr,p {
-    color: #3c3836;
-}
+*:not(a),body,td,tr,p { color: #3c3836; }
 
 img {
 	max-width: 99%;
 	max-height: 99%;
 }
 
-h1,h2,h3,h4 {
-    color: #7c6f64}
+h1,h2,h3,h4 { color: #7c6f64 }
+
+code { background-color: #d5c4a1; }
 
 button {
     background-size: auto;
-    color: #b16286}
+    color: #b16286
+}
 
-a {
-    color: #076678;
-a:hover,a:focus,a:visited { color: #076678}
+a { color: #076678; }
+a:hover,a:focus,a:visited { color: #076678 }
 a:hover { text-decoration: underline}
 
 b   { font: bold monospace; }
