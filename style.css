@@ -1,7 +1,6 @@
 /* Base */
 * { 
 	font-family: "Source Code Pro";
-    font: 8.7pt; 
 }
 
 h1 { font: 18pt; }
@@ -11,6 +10,10 @@ h4 { font: 12pt; }
 h5 { font: 10pt; }
 
 *:not(a),body,td,tr,p { color: #3c3836; }
+
+body {
+	margin: 8px;
+}
 
 img {
 	max-width: 99%;
