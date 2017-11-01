@@ -1,14 +1,13 @@
 /* Base */
 * { 
-	font: 10pt;
-	font-family: "Source Code Pro";
+	font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
 }
 
-h1 { font: 18pt; }
-h2 { font: 16pt; }
-h3 { font: 14pt; }
-h4 { font: 12pt; }
-h5 { font: 10pt; }
+h1 { font: 2.5em; }
+h2 { font: 2em; }
+h3 { font: 1.5em; }
+h4 { font: 1.25em; }
+h5 { font: 1em; }
 
 *:not(a),body,td,tr,p { color: #3c3836; }
 
@@ -36,7 +35,7 @@ a:hover { text-decoration: underline; }
 b   { font: bold; }
 em  { font: bold; }
 
-code,pre { 
-	background-color: #d5c4a1;
-	font: monospace;
+pre { 
+	font-family: "Source Code Pro", monospace;
+	background-color: #eff0f1;
 }
