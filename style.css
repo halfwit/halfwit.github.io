@@ -40,6 +40,13 @@ a:hover { text-decoration: underline; }
 b   { font: bold; }
 em  { font: bold; }
 
+blockquote {
+	padding: 0 1em;
+	color: #6a737d;
+	border-left: 0.25em solid #dfe2e5;
+	margin: auto;
+}
+
 pre { 
 	font-family: "Source Code Pro", monospace;
 	background-color: #eff0f1;
