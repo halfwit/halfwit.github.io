@@ -19,10 +19,21 @@
 				<li><a href="#In Closing, Your Honour">In Closing, Your Honour</a></li>
 			</ul>
 		<nav>
+				<section>
+			<header>
+				<h2>
+					<a name=""></a>
+					
+				</h2>
+			</header>
+		</section>
 
 		<section>
 			<header>
-				<h2><a name="It Has Been One Year Since My Last WM Issue">It Has Been One Year Since My Last WM Issue</a></h2>
+				<h2>
+					<a name="It Has Been One Year Since My Last WM Issue"></a>
+					It Has Been One Year Since My Last WM Issue
+				</h2>
 			</header>
 			<p>So for quite some time, I was going through window managers quite frequently. I'd trial one, enjoy many points of it, and eventually find another that suited for a different reason. I really liked <a href="https://dwm.suckless.org/">dwm</a> for a few reasons. It had a wonderfully responsive stacking layout, and the tagging feature. I also really liked <a href="https://i3wm.org/">i3</a> for the menu system, and per-window hooks. (these may not be unique, nor originated by these wm's; but this is where I encountered them first)</p>
 			<p>Along came the <a href="https://github.com/wmutils">wmutils</a> project, which is basically a set of binaries for interacting with windows and the X server from the command line. It is similar in design to xdotool - but not monolithic - which I had come to appreciate in userland tools for ease with which I could learn them. Simple manpages, fewer flags, just easy to learn in one sitting.</p>
@@ -31,7 +42,10 @@
 
 		<section>
 			<header>
-				<h2><a name="Tags Are Pretty Nice">Tags Are Pretty Nice</a></h2>
+				<h2>
+					<a name="Tags Are Pretty Nice"></a>
+					Tags Are Pretty Nice
+				</h2>
 			</header>
 			<p>Tags, or groups as some call them are a feature that has been around for a while. The essence of tags is pretty simple. When you have a window, you assign it to a particular group, or tag. If that window is in a tag with other windows, you can bring them into view or out all at once. That's not at all different from a workspace though, and what sets tags apart is that you can have more than one tag in the view at a time. This is hard to show in a video without voiceover, which I currently don't have access to; but I'll attempt it:</p>
 			<p><a href="https://ptpb.pw/HSVe.mkv">demo</a> The big win is, when you're coding, you can pull up your email client alongside your editor, write your email, and hide your email client fluidly. Try it! It's great.</p>
@@ -39,7 +53,10 @@
 
 		<section>
 			<header>
-				<h2><a name="Cool, Tags Sound Neat. How Get?">Cool, Tags Sound Neat. How Get?</a></h2>
+				<h2>
+					<a name="Cool, Tags Sound Neat. How Get?"></a>
+					Cool, Tags Sound Neat. How Get?
+				</h2>
 			</header>
 			<p>I had decided to go with wmutils, but they had a cludgy, file-backed grouping mechanism. It worked mostly ok, but I was never very satisfied. There was lots of state wonkiness, and I'd end up with false information about which tags were active, which windows were in which tag, etc.</p>
 			<p>I was mulling over many ideas, from using a long running process to track variables, to using the same file-backed grouping as the others. Around the same time, I was working on <a href="https://github.com/sdhand/x11fs">x11fs</a> to attempt to implement a clipboard - and was working with the X11 ATOM system. Putting two, and two, and two together, I was able to realize that I could store the tag data as a user atom.</p>
@@ -62,7 +79,10 @@ lsgrp 1 | xargs mapw -t
 
 		<section>
 			<header>
-				<h2><a name="So Why Not Tiling">So Why Not Tiling</a></h2>
+				<h2>
+					<a name="So Why Not Tiling"></a>
+					So Why Not Tiling
+				</h2>
 			</header>
 			<p>Towards the end of my tenure of using a tiling window manager, I found myself doing something kinda pointless. I was opening up empty terminals, to pad out my other terminals to a particular size. Now, this seems insane, but I was mildly obsessing over <a href="https://baymard.com/blog/line-length-readability">line lengths</a>.</p>
 			<p>Eventually, I was just sick of it all. I moved over to having all windows float, hand laying them out to what I soon recognized to be a predictable arrangement, regardless of which tags I had in. Some weeks of research ensued, and I eventually stumbled across the binpacking algorithms, specifically the <a href="https://en.wikipedia.org/wiki/Bin_packing_problem">2D variant</a>. The 2D one wasn't a perfect match, as it depends on rectangles which have a set size, and I wanted my windows to grow and fit the space as much as possible, when possible.</p>
@@ -72,7 +92,10 @@ lsgrp 1 | xargs mapw -t
 
 		<section>
 			<header>
-				<h2><a name="Ok Then, That Was A Lot Of Reading. Binpack!">Ok Then, That Was A Lot Of Reading. Binpack!</a></h2>
+				<h2>
+					<a name="Ok Then, That Was A Lot Of Reading. Binpack!"></a>
+					Ok Then, That Was A Lot Of Reading. Binpack!
+				</h2>
 			</header>
 			<p>tl;dr</p>
 <code><pre>read windows from standard in minx/miny/maxx/maxy/window id
@@ -100,7 +123,10 @@ write xywh + window id to stdout for all windows
 
 		<section>
 			<header>
-				<h2><a name="Wmutils And Hwwm">Wmutils And Hwwm</a></h2>
+				<h2>
+					<a name="Wmutils And Hwwm"></a>
+					Wmutils And Hwwm
+				</h2>
 			</header>
 			<p>By this point in time, I was already using wmutils exclusively. Simple hotkey movement around, coupled with simple hotkey resize was enough to make due for my window management needs, while I worked through the remaining struggles associated with implementing what I wanted.</p>
 			<p>The main idea was, list all windows, pipe them into a utility to pull the name of the window out, and use that name and awk to read out a preset from a file, which would be properly formatted for input to binpack, which would crunch the data and output the raw geometry for each window. Then using wmv all of our windows would be exactly where we wanted them to be. The first working attempt at this looked pretty darn good, and I even managed to grab a <a href="https://www.youtube.com/watch?v=MSIjqTgtj2c">video</a>.</p>
@@ -114,7 +140,10 @@ write xywh + window id to stdout for all windows
 
 		<section>
 			<header>
-				<h2><a name="In Closing, Your Honour">In Closing, Your Honour</a></h2>
+				<h2>
+					<a name="In Closing, Your Honour"></a>
+					In Closing, Your Honour
+				</h2>
 			</header>
 			<p>I'd like to thank you for taking the time to read this. The entire endeavour was a lot of work, and considering it started with trying scratch a barely annoying itch that was having to do anything to manage windows, one must ask: was it worth it? Yes, it was a great learning experience, and I've been nothing but happy with my window management since the switch to WM_CLASS. All in all, this has improved my productivity, and drastically improved my "flow state" fluidity, while all but obliterating the overhead in my window management from the tiling days. I honestly can't wait to get this up and running on the multihead setup, and I hope some of you out there are inspired.</p>
 			<p>If you would like to try this window manager, but run in to snags, or have any questions, I can be found on Freenode, on the #hwwm channel, and others. Additionally, you can always email me at the address listed below.</p>
