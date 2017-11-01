@@ -3,13 +3,18 @@
 	font-family: 'Source Sans Pro', 'Open Sans', sans-serif;
 }
 
-h1 { font: 2.5em; }
-h2 { font: 2em; }
+h1 { 
+	font: 2em;
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #eaecef;
+}
+
+h2 { font: 1.75em; }
 h3 { font: 1.5em; }
 h4 { font: 1.25em; }
 h5 { font: 1em; }
 
-*:not(a),body,td,tr,p { color: #3c3836; }
+*:not(a),body,td,tr,p { color: #24292e; }
 
 body {
 	margin: 8px;
@@ -20,7 +25,7 @@ img {
 	max-height: 99%;
 }
 
-h1,h2,h3,h4 { color: #3c3836; }
+h1,h2,h3,h4,h5 { color: #24292e; }
 
 
 button {
@@ -28,8 +33,8 @@ button {
     color: #b16286;
 }
 
-a { color: #076678; }
-a:hover,a:focus,a:visited { color: #076678; }
+a { color: #0366d6; }
+a:hover,a:focus,a:visited { color: #0366d6; }
 a:hover { text-decoration: underline; }
 
 b   { font: bold; }
