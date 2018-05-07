@@ -4,9 +4,10 @@
 }
 
 h1 { 
+	background-color: #427b58;
+	padding: 0.3em;
 	font: 2em;
-	padding-bottom: 0.3em;
-	border-bottom: 1px solid #eaecef;
+	text-decoration: underline;
 }
 
 h2 { font: 1.75em; }
