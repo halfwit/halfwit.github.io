@@ -1,6 +1,7 @@
 # halfwit.github.io
 A home for various writings related to what I've been working on or learning.
-Generated using my handy [blog script](https://github.com/halfwit/blog)
+
+Mostly generated using my handy [blog script](https://github.com/halfwit/blog)
 
 ## Posts:
 
