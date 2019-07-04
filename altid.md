@@ -1,4 +1,4 @@
-# Altid https://altid.github.io
+# [Altid](https://altid.github.io)
 
 ## What Is It Good For?
 
