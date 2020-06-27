@@ -1,6 +1,6 @@
 # Searching & Saving With Plumber
 
-[TL;DR, NOW SHOW ME THE DAMN CODE](#plumbing)
+[TL;DR, NOW SHOW ME THE DAMN CODE](https://halfwit.github.io/searching.html#plumbing)
 
 ## Standing On The Shoulders Of !/bin/sh
 
