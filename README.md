@@ -7,3 +7,4 @@
 * [2017-07-30 - Desk Build Log](deskblog.md)
 * [2017-09-21 - Bin Packing](binpacking.md)
 * [2019-07-02 - Using Altid](altid.md)
+* [2020-06-27 - Replacing Dsearch](searching.md)

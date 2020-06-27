@@ -1,6 +1,6 @@
 # Searching & Saving With Plumber
 
-[TL;DR, NOW SHOW ME THE DAMN CODE](#Plumbing)
+[TL;DR, NOW SHOW ME THE DAMN CODE](#plumbing)
 
 ## Standing On The Shoulders Of !/bin/sh
 
