@@ -1,0 +1,24 @@
+---
+layout: page
+title: Taking My Programs With Me
+permalink: ii
+---
+
+#### ii…​ Captain?
+I’ve always held a strange affinity for ii, the insanely simple filesystem-based irc program. I could never place it, nor could I ever fathom actually using such a thing - it has far fewer balls and whistles than anything I’d go for, out of the box. But filesystems. File servers, really - I’ve spent some time researching operating systems, and Bells Plan9 (from outer space ;p) uses file servers, union mounting, namespacing and a few other tricks to great success. It facilitates unprecedented levels of simplicity in program design, and runtime flexibility. That’s stuck with me, and ii has as well.
+
+Flash forward a year or two. This idea - this paradigm-shifting idea (in my mind) that I want to be able to use the same damn thing on my desktop, on my phone, on my tablet, on my laptop, on my fuckin' TV, on a toaster (you can see where I’m going) - pops in to my head. This should be possible, we’ve had x11 forwarding for years now. It’s really so very close to what I’d want, with one fundamental issue. We use all of the aforementioned devices differently; be it with a keyboard, remote control, gamepad, touch input, the list really doesn’t stop there. (voice control…​ trailing off in thought…​) X11 forwarding somewhat stops being useful at that point. Touch control on the tiny, tiny buttons that are sent over from my desktop would be abysmal. Really. So I started iterating over ideas, and I think I’ve stumbled on to something that may very well do the thing, with the thing, to have the thing. (citation needed)
+
+
+#### ii - It’s Not Just For Sadists, Anymore
+
+It’s been there all along - ii. It’s what’s for breakfast, it’s where babies come from, it’s why the sky is blue. I can serve a filesystem, over absolutely anything - specifically sshfs or 9p - to practically any Linux or Unix enabled device. (My toaster will be sore, but I don’t fucking pay it to think, I pay it to toast my bread.)
+
+So what the hell, who cares? ii is nothing, it’s literally just a filesystem (better, file server) representation of the current state of an irc session. What’s revolutionary about being able to serve that up to some other device?
+
+I can write programs to read that filesystem, for each of these devices, using a toolkit specifically designed for said paradigm (TV, desktop, phone) that will not have to be insanely complex. Then, I can write small clients to speak to the filesystem, draw up the buttons or the bells and whistles I require to get the shit done, and be able to go deftly between devices while I move through my day - from my phone, to my desktop, to my tablet - with all of the exact sessions of irc, coding, youtube videos, gaming, internet browsing, texting, all of the above seemlessly across multiple clients. Because, they’re all just drawing pretty boxes around data from a simple filesystem, with FIFOs. It’s handling raciness, it’s handling multiple clients attached, just by virtue of this being a single user solution.
+
+#### ii - I Eye The Future
+So, how do you go from a tiling window manager, take those same programs, and connect them to a phone? You technically won’t at all. You’ll simply mount a filesystem. If you’re going to open or close or read a specific file, the underlying logic will send out the ssh requests for that file, (in the case of sshfs) which invokes little overhead. Your phone could simply list the open programs, and you’d select the one you want. (Like, from an icon on a homescreen, if you wanted. I’d prefer having a seperate way to handle sessions of things, personally.) Ideally, that’s all that need happen. The client would only write to the FIFO, which hopefully will not end up in some racy mess, but…​ I’m pathetically naive at this point, as this is so incredibly early into this journey - I’m sure much of the above will fail to hold true. Coding can be hard, and indeed what I assume may work one way will likely work another.
+
+So now, the journey begins. I’ll be working on writing frontends for ii, then working on other programs, one by one until I get what I want!
