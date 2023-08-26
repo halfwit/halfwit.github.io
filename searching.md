@@ -1,10 +1,8 @@
 ---
 layout: page
-title: "Searching & Saving With Plumber"
+title: "Searching And Saving With Plumber"
 permalink: /searching
 ---
-
-# Searching & Saving With Plumber
 
 [TL;DR, NOW SHOW ME THE DAMN CODE](https://halfwit.github.io/searching.html#plumbing)
 

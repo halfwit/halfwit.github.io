@@ -4,8 +4,6 @@ title: "Bin Packing"
 permalink: /binpacking
 ---
 
-# Bin Packing
-
 ### ptpb links died, and I haven't had time to re-record. Sorry in advance! 
 
 ## It Has Been One Year Since My Last WM Issue

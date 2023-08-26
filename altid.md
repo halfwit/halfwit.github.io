@@ -4,8 +4,6 @@ title: "Altid"
 permalink: /altid
 ---
 
-# [Altid](https://altid.github.io)
-
 ## What Is It Good For?
 
 ~~Absolutely nothing~~

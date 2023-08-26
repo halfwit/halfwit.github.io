@@ -4,8 +4,6 @@ title: "Keyboard Build Log"
 permalink: /keyboardblog
 ---
 
-# Keyboard Build Log
-
 >Imitation is the sincerest form of flattery - Charles Caleb Colton
 Inspired by the Ergodox and [Oobly](https://geekhack.org/index.php?topic=49721.0)
 

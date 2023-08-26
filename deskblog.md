@@ -4,8 +4,6 @@ title: "Desk Build Log"
 permalink: /deskblog
 ---
 
-# Desk Build Log
-
 ## 2014
 
 I had been reading all of the various literature about standing desks. It all seemed too good, why weren't these more popular?
