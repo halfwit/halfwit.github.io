@@ -4,7 +4,7 @@ title: "Bin Packing"
 permalink: /binpacking
 ---
 
-### ptpb links died, and I haven't had time to re-record. Sorry in advance! 
+*ptpb links died, and I haven't had time to re-record. Sorry in advance!*
 
 ## It Has Been One Year Since My Last WM Issue
 
