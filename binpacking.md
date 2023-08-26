@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Bin Packing"
+permalink: /binpacking
+---
+
 # Bin Packing
 
 ### ptpb links died, and I haven't had time to re-record. Sorry in advance! 

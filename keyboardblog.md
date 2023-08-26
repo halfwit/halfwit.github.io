@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Keyboard Build Log"
+permalink: /keyboardblog
+---
+
 # Keyboard Build Log
 
 >Imitation is the sincerest form of flattery - Charles Caleb Colton

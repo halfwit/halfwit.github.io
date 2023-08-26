@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Desk Build Log"
+permalink: /deskblog
+---
+
 # Desk Build Log
 
 ## 2014
