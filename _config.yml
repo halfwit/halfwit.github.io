@@ -1,6 +1,6 @@
 plugins:
   - jekyll-feed
 title: Halfwit's Dev Blog
-description: Welcome!
+description: Development + Personal blog
 author: Michael Misch
-theme: minima
+theme: hacker
