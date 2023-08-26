@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: post
 title: "Bin Packing"
-permalink: /binpacking
 ---
 
 *ptpb links died, and I haven't had time to re-record. Sorry in advance!*

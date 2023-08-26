@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: post
 title: "Searching And Saving With Plumber"
-permalink: /searching
 ---
 
 [TL;DR, NOW SHOW ME THE DAMN CODE](https://halfwit.github.io/searching.html#plumbing)
