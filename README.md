@@ -1,6 +1,6 @@
 ## Hello!
 
-I'm halfwit! I'm a dad, first and foremost, but also I'm a neurodivergent, celiac, lgbtq+ ally (with a penchant for over-explaining. The following page is a treatise to just that).  I am fascinated with emerging technology, both for the societal implications, and my curiosity. I strive to learn what I am able to in any fundamental field, leveraging my growing base of knowledge to create unique solutions to hard problems.
+I'm halfwit. I'm a dad, first and foremost, but also I'm a neurodivergent, celiac, lgbtq+ ally (with a penchant for over-explaining. The following page is a treatise to just that).  I am fascinated with emerging technology, both for the societal implications, and my curiosity. I strive to learn what I am able to in any fundamental field, leveraging my growing base of knowledge to create unique solutions to hard problems.
 
 I am currently working as a full-stack developer, specializing in Laravel/NodeJS, but I don't limit myself to any given technology.
 
