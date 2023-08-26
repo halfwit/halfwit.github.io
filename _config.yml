@@ -1,0 +1,5 @@
+plugins:
+  - jekyll-feed
+title: Halfwit's Dev Blog
+description: Welcome!
+author: Michael Misch
