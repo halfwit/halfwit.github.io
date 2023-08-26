@@ -3,3 +3,4 @@ plugins:
 title: Halfwit's Dev Blog
 description: Welcome!
 author: Michael Misch
+theme: minima
