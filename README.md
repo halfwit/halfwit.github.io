@@ -3,6 +3,16 @@ I'm halfwit! I'm a dad, first and foremost, but also I'm a neurodivergent, celia
 
 I am currently working as a full-stack developer, specializing in Laravel/NodeJS, but I don't limit myself to any given technology.
 
+#### Posts
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 #### Other Things?
 
 My main side project has been https://altid.github.io. I wanted to make a software solution that took commonly used applications, and made them highly accessible, highly customizable, and access to them feel ubiquitous. After many iterations, and many great ideas from friends, I was able to land on a design that really enabled all of those fronts. My current work involves writing [client applications](https://altid.github.io/clients) to really showcase what this system can enable.
