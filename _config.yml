@@ -2,5 +2,12 @@ plugins:
   - jekyll-feed
 title: Halfwit's Dev Blog
 description: Development + Personal blog
-author: Michael Misch
+author: 
+  name: Michael Misch
+  email: "michaelmisch1985@gmail.com"
 theme: minima
+minima:
+  social_links:
+    - { platform: github, user_url: "https://github.com/halfwit", title: Halfwit }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/michael-misch-24453867" }
+  skin: auto
