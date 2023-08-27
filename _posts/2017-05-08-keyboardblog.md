@@ -34,8 +34,6 @@ Desoldering was held back for lack of a solder pump, so I've been working a bit 
 
 ![Rough cut out](https://halfwit.github.io/docs/assets/images/IMG_20170523_141729.jpg "Rough cut out")
 
-![All of the switches have been harvested](https://halfwit.github.io/docs/assets/images/IMG_20170525_010320.jpg)
-
 ## Well, This Is Interesting.
 
 We have a little bit of an update! I completed the left half... ok maybe not. I couldn't wait to see it together, still waiting on the electronics.
